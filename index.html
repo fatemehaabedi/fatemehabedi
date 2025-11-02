@@ -1,228 +1,795 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>فاطمه عابدی | Timah Makeup Artist</title>
-  <meta name="description" content="رزومه و نمونه‌کارهای فاطمه عابدی (Timah) میکاپ آرتیست - تهران">
-  <meta name="theme-color" content="#111827">
-  <style> 
-    /* ---------- Base Reset ---------- */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:#0b0f19;color:#f8fafc;font-family:IRANSans, Vazirmatn, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Tahoma, Arial}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    :root{
-      --bg:#0b0f19;
-      --card:rgba(255,255,255,.06);
-      --line:rgba(255,255,255,.15);
-      --muted:#cbd5e1;
-      --primary:#f472b6; /* pink */
-      --secondary:#60a5fa; /* blue */
-      --accent:#a78bfa; /* purple */
-      --radius:20px;
-      --shadow:0 12px 40px rgba(0,0,0,.35);
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timah Makeup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    /* ---------- Layout ---------- */
-    .wrap{max-width:1100px;margin:0 auto;padding:24px}
-    header{
-      position:relative;overflow:hidden;border-radius:var(--radius);
-      background:
-        radial-gradient(1000px 600px at 10% 10%, rgba(96,165,250,.25), transparent 60%),
-        radial-gradient(900px 600px at 90% 20%, rgba(244,114,182,.18), transparent 55%),
-        linear-gradient(0deg, #0b0f19, #151a2b);
-      border:1px solid var(--line); box-shadow:var(--shadow); padding:28px;
-    }
-    .hero{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
-    .avatar{
-      width:120px;height:120px;border-radius:28px;overflow:hidden;border:1px solid var(--line);
-      background:linear-gradient(135deg,#111827,#1f2937); display:grid;place-items:center;font-weight:800;letter-spacing:.5px
-    }
-    .badge{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.08);
-      border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px}
-    .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e}
-    h1{margin:12px 0 6px;font-size:clamp(26px,4.8vw,40px);line-height:1.2}
-    .subtitle{margin:0;color:var(--muted)}
-    .contact{
-      margin-top:14px;display:flex;flex-wrap:wrap;gap:10px
-    }
-    .chip{
-      display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;
-      background:var(--card);border:1px solid var(--line);transition:transform .18s ease, background .18s ease
-    }
-    .chip:hover{transform:translateY(-2px);background:rgba(255,255,255,.12)}
-    .sp{height:1px;background:var(--line);margin:18px 0}
+        body {
+            width: 100%;
+            background: url("02.jpg") center/cover fixed no-repeat;
+            /* ← ثابت و سراسری */
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
 
-    /* ---------- Sections ---------- */
-    section{margin-top:26px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
-    .section-title{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:20px}
-    .pill{display:inline-block;background:linear-gradient(90deg,var(--primary),var(--secondary));height:14px;width:14px;border-radius:999px}
+        section {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            scroll-snap-align: start;
+        }
 
-    /* ---------- CTA Row ---------- */
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;font-weight:700;
-      background:linear-gradient(135deg,var(--secondary),var(--accent));border:none
-    }
-    .btn.sec{background:rgba(255,255,255,.08);border:1px solid var(--line);font-weight:600}
+        /* صفحه اول */
+        .hero {
+            background: transparent;
+            /* ← بکگراند سکشن اول حذف شد */
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* ---------- Gallery ---------- */
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-    .filter{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);cursor:pointer}
-    .filter.active{background:linear-gradient(90deg,var(--primary),var(--secondary));border:none}
-    .grid{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
-    @media(min-width:720px){ .grid{grid-template-columns:repeat(3,1fr)} }
-    .item{
-      position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);background:#0f172a
-    }
-    .item img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform .35s ease;filter:saturate(1.02)}
-    .item:hover img{transform:scale(1.04)}
-    .tag{position:absolute;right:8px;top:8px;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);
-      border:1px solid var(--line);padding:4px 8px;border-radius:10px;font-size:12px}
+        svg.triangle-shape {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            filter: drop-shadow(-4px 0 10px rgba(0, 0, 0, 0.35));
+        }
 
-    /* ---------- Lightbox ---------- */
-    .lightbox{
-      position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:24px;z-index:50
-    }
-    .lightbox.open{display:flex}
-    .lightbox img{max-width:95vw;max-height:85vh;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
-    .lightbox .close{position:absolute;top:16px;left:16px;cursor:pointer;border:1px solid var(--line);
-      background:rgba(255,255,255,.1);padding:8px 12px;border-radius:10px}
+        .intro {
+            position: absolute;
+            left: 6%;
+            top: 25%;
+            z-index: 2;
+            margin-top: -140px;
+            color: #111;
+            text-shadow: 0 0 3px #fff;
+        }
 
-    /* ---------- SVG icons ---------- */
-    .i{width:18px;height:18px;display:inline-block}
-    footer{margin:30px 0;color:var(--muted);text-align:center;font-size:14px}
-  </style>
+        .intro h1 {
+            font-size: 2.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro p {
+            font-size: 1rem;
+            line-height: 1.6rem;
+        }
+
+        .menu {
+            position: absolute;
+            top: 45%;
+            right: 5%;
+            z-index: 3;
+        }
+
+        .menu a {
+            position: absolute;
+            display: block;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #f8f8f8;
+            padding: 0.7rem 1.6rem;
+            border-radius: 999px;
+            text-align: center;
+            width: 180px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.35s ease;
+        }
+
+        .menu a:nth-child(1) {
+            top: -105px;
+            right: -15px;
+        }
+
+        .menu a:nth-child(2) {
+            top: -35px;
+            right: 45px;
+        }
+
+        .menu a:nth-child(3) {
+            top: 35px;
+            right: -15px;
+        }
+
+        .menu a:nth-child(4) {
+            top: 105px;
+            right: 45px;
+        }
+
+        .menu a:nth-child(5) {
+            top: 175px;
+            right: -15px;
+        }
+
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.5),
+                0 0 25px rgba(70, 106, 183, 0.5);
+            transform: scale(1.07);
+            color: #fff;
+        }
+
+        .footer {
+            position: fixed;
+            /* ← تغییر اصلی */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0.6rem 0;
+            z-index: 100;
+            /* بالاتر از بقیه لایه‌ها */
+            backdrop-filter: blur(10px);
+            /* افکت شیشه‌ای ملایم */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            color: #466ab7;
+        }
+
+        .footer svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* -------------------------
+       صفحه دوم: معرفی
+    -------------------------- */
+        .about {
+            margin-top: -290px;
+
+            background: url("02.jpg") center/cover fixed no-repeat;
+            /* هماهنگ با صفحه اول */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .about::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 50%;
+            /* background: url("03.jpg") center/cover no-repeat; */
+            clip-path: polygon(0 0, 100% 0, 50% 80%);
+            opacity: 0.9;
+        }
+
+        .about::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 50%;
+            /* background: url("02.jpg") center/cover no-repeat; */
+            clip-path: polygon(0 0, 100% 0, 60% 85%);
+            opacity: 0.6;
+        }
+
+
+        .circle-big {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: rgba(70, 106, 183, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
+        }
+
+        .circle-small {
+            position: absolute;
+            top: calc(50% - 140px);
+            /* بالاتر از مرکز دایره بزرگ */
+            right: calc(50% - 140px);
+            /* متمایل به سمت راست دایره */
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: url("02.jpg") center/cover no-repeat;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+            z-index: 3;
+        }
+
+
+
+
+
+        .about-title {
+            position: relative;
+            top: -40px;
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(70, 106, 183, 0.6),
+                0 0 20px rgba(255, 255, 255, 0.3);
+            z-index: 3;
+            margin-bottom: 40px;
+
+            text-align: left;
+            width: 80%;
+            margin-right: auto;
+            padding-right: 10%;
+            padding-left: 50px;
+
+            /* افکت درخشش آرام */
+            animation: titleGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from {
+                text-shadow: 0 0 6px rgba(70, 106, 183, 0.6),
+                    0 0 12px rgba(255, 255, 255, 0.25);
+            }
+
+            to {
+                text-shadow: 0 0 14px rgba(98, 136, 207, 0.8),
+                    0 0 28px rgba(255, 255, 255, 0.45);
+            }
+        }
+
+        /* خط زیر ظریف گرادینتی */
+        .about-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50px;
+            width: 160px;
+            height: 3px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #466ab7, #6288cf, #a8c0ff);
+            box-shadow: 0 0 10px rgba(98, 136, 207, 0.5);
+        }
+
+
+
+        /* فیلتر بلور برای تم شیشه‌ای داخل مثلث */
+        .glass-effect {
+            filter: blur(10px) brightness(1.1);
+            opacity: 0.25;
+        }
+
+        .glass-triangle {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            backdrop-filter: blur(12px) brightness(1.15) saturate(1.2);
+            -webkit-backdrop-filter: blur(12px) brightness(1.15) saturate(1.2);
+            background: linear-gradient(135deg, rgba(70, 106, 183, 0.65), rgba(98, 136, 207, 0.55));
+            border-right: 1px solid rgba(255, 255, 255, 0.25);
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            clip-path: polygon(100% 0, 100% 96%, 15% 50%);
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.25);
+        }
+
+
+
+        /* سکشن سوم: خدمات */
+        .services {
+            background: url("02.jpg") center/cover fixed no-repeat;
+            position: relative;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            /* padding-top: 90px; */
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            margin-top: -100px;
+        }
+
+        .services::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+
+            /* پس‌زمینه آبی شیشه‌ای هماهنگ با مثلث بالا */
+            background: linear-gradient(135deg,
+                    rgba(70, 106, 183, 0.55),
+                    rgba(98, 136, 207, 0.45));
+
+            backdrop-filter: blur(45px) saturate(1.4) brightness(1.2);
+            -webkit-backdrop-filter: blur(45px) saturate(1.4) brightness(1.2);
+
+            /* فید دوطرفه بالا و پایین */
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 1) 14%,
+                    rgba(0, 0, 0, 1) 80%,
+                    rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 1) 14%,
+                    rgba(0, 0, 0, 1) 47%,
+                    rgba(0, 0, 0, 0) 56%);
+        }
+
+
+
+
+
+        .services-content {
+            position: relative;
+            z-index: 2;
+            width: min(90%, 600px);
+            margin-top: 40px;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-align: left;
+            padding-left: 60px;
+            letter-spacing: 0.5px;
+            animation: titleGlow 4s ease-in-out infinite alternate;
+        }
+
+        .services h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-align: left;
+            padding-left: 65px;
+            margin-bottom: 30px;
+            opacity: 0.85;
+        }
+
+        .services ul {
+            list-style: none;
+            margin: 0;
+            padding: 0 70px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .services li {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 1.05rem;
+            font-weight: 400;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: right;
+            direction: rtl;
+        }
+
+        .services li::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #153a8a;
+            box-shadow: 0 0 8px rgba(70, 106, 183, 0.9);
+            margin-right: 10px;
+            margin-left: 10px;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .portfolio {
+            position: relative;
+            color: #fff;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            top: -200px;
+            /* min-height: 100vh; */
+            overflow: visible;
+        }
+
+
+        .portfolio::before {
+                        min-height: 100vh;
+
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(70, 106, 183, 0.55), rgba(98, 136, 207, 0.45));
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            z-index: 0;
+        }
+
+        .portfolio-title {
+            position: relative;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            z-index: 2;
+            text-shadow: 0 0 15px rgba(70, 106, 183, 0.6);
+        }
+
+        /* پوشه گالری */
+        .folders {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .folder {
+            width: 220px;
+            height: 160px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .folder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: filter 0.3s ease;
+        }
+
+        .folder p {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .folder:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(70, 106, 183, 0.6);
+        }
+
+        .folder:hover img {
+            filter: brightness(1);
+        }
+
+        /* گالری تصاویر */
+        .gallery-container {
+            display: none;
+            position: relative;
+            z-index: 3;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            color: #fff;
+            padding: 8px 20px;
+            margin: 10px;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* حالت نمایش تمام‌صفحه */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            cursor: zoom-out;
+        }
+
+        .folder {
+            position: relative;
+            z-index: 5;
+            /* اطمینان از کلیک‌پذیری */
+        }
+    </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <!-- ======= HERO / HEADER ======= -->
-    <header>
-      <div class="hero">
-        <div class="avatar" aria-hidden="true">TIMAH</div>
-        <div>
-          <span class="badge"><span class="dot"></span> میکاپ آرتیست | Beauty & Bridal</span>
-          <h1>فاطمه عابدی (Timah)</h1>
-          <p class="subtitle">میکاپ ارتیست متولد ۱۳۸۴، ساکن تهران — تخصص در عروس، فشن، نچرال‌گلام و ترندهای پوستی.</p>
-          <div class="contact">
-            <a class="chip" href="mailto:fatemeh.aabedi2005@gmail.com" title="ارسال ایمیل">
-              <!-- Email icon -->
-              <svg class="i" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7.5a2.5 2.5 0 0 1 2.5-2.5h13A2.5 2.5 0 0 1 21 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5v-9Z" stroke="currentColor" stroke-width="1.5"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.5"/></svg>
-              fatemeh.aabedi2005@gmail.com
-            </a>
-            <a class="chip" href="https://instagram.com/Timah.makeup" target="_blank" rel="noopener" title="اینستاگرام">
-              <!-- Instagram icon -->
-              <svg class="i" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-              Timah.makeup
-            </a>
-            <a class="chip" href="https://t.me/Timahmakeup" target="_blank" rel="noopener" title="تلگرام">
-              <!-- Telegram icon -->
-              <svg class="i" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.8 4.6 3.9 11.6c-.9.37-.88 1.69.03 2.02l3.94 1.45 1.54 4.57c.25.73 1.2.93 1.72.36l2.44-2.6 4.17 3.07c.69.51 1.69.13 1.9-.73l3.02-12c.25-.98-.66-1.83-1.66-1.54Z" stroke="currentColor" stroke-width="1.2"/></svg>
-              @Timahmakeup
-            </a>
-            <span class="chip" title="محل سکونت">
-              <!-- Location icon -->
-              <svg class="i" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.09 7-11a7 7 0 1 0-14 0c0 4.91 7 11 7 11Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
-              تهران
-            </span>
-          </div>
-          <div class="cta">
-            <a class="btn" href="mailto:fatemeh.aabedi2005@gmail.com">رزرو نوبت</a>
-            <a class="btn sec" href="#gallery">مشاهده نمونه‌کار</a>
-          </div>
-        </div>
-      </div>
-    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const folders = document.querySelectorAll(".folder");
+            const foldersContainer = document.querySelector(".folders");
+            const galleryContainer = document.querySelector(".gallery-container");
+            const gallery = document.querySelector(".gallery");
+            const backBtn = document.querySelector(".back-btn");
+            const lightbox = document.querySelector(".lightbox");
+            const lightboxImg = lightbox.querySelector("img");
 
-    <!-- ======= ABOUT ======= -->
-    <section class="card">
-      <h2 class="section-title"><span class="pill"></span> معرفی کوتاه</h2>
-      <p style="margin:0">
-        من فاطمه عابدی هستم؛ میکاپ آرتیست با تمرکز بر skin-finish تمیز، سازگار با انواع پوست، و انتخاب محصولات بادوام. در پروژه‌های عروس،
-        فشن و میکاپ‌های مناسبتی کار می‌کنم و از ترندهای روز الهام می‌گیرم تا نتیجه‌ای طبیعی و ماندگار ارائه دهم.
-      </p>
-    </section>
+            const scrollY = { value: 0 };
 
-    <!-- ======= SERVICES ======= -->
-    <section class="card">
-      <h2 class="section-title"><span class="pill"></span> خدمات</h2>
-      <ul style="margin:0;padding-right:18px;line-height:1.9;color:#e5e7eb">
-        <li>میکاپ عروس (Trial & Day-of) + اصلاح تناژ و فیکس پیشرفته</li>
-        <li>میکاپ نچرال‌گلام و مهمانی، شاین و مات</li>
-        <li>میکاپ ادیتوریال و فشن برای پروژه‌های عکاسی</li>
-        <li>مشاوره و انتخاب محصولات مطابق نوع پوست</li>
-      </ul>
-    </section>
+            // باز شدن گالری هر پوشه
+            folders.forEach(folder => {
+                folder.addEventListener("click", e => {
+                    e.preventDefault();
 
-    <!-- ======= GALLERY ======= -->
-    <section id="gallery" class="card">
-      <h2 class="section-title"><span class="pill"></span> گالری تصاویر نمونه‌کار</h2>
+                    // ذخیره موقعیت فعلی صفحه
+                    scrollY.value = window.scrollY;
 
-      <div class="filters" id="filters">
-        <button class="filter active" data-filter="all">همه</button>
-        <button class="filter" data-filter="bridal">عروس</button>
-        <button class="filter" data-filter="party">مجلسی</button>
-        <button class="filter" data-filter="editorial">فشن/ادیتوریال</button>
-      </div>
+                    // بارگذاری عکس‌ها
+                    const imgs = folder.dataset.images.split(",");
+                    gallery.innerHTML = imgs
+                        .map(src => `<img src="${src.trim()}" alt="نمونه‌کار">`)
+                        .join("");
 
-      <div class="grid" id="grid">
-        <!-- Items: change src paths to your images. Category via data-cat -->
-        <!-- Bridal -->
-        <figure class="item" data-cat="bridal"><img loading="lazy" src="assets/bridal/1.jpg" alt="میکاپ عروس 1"><figcaption class="tag">عروس</figcaption></figure>
-        <figure class="item" data-cat="bridal"><img loading="lazy" src="assets/bridal/2.jpg" alt="میکاپ عروس 2"><figcaption class="tag">عروس</figcaption></figure>
-        <figure class="item" data-cat="bridal"><img loading="lazy" src="assets/bridal/3.jpg" alt="میکاپ عروس 3"><figcaption class="tag">عروس</figcaption></figure>
-        <!-- Party -->
-        <figure class="item" data-cat="party"><img loading="lazy" src="assets/party/1.jpg" alt="میکاپ مجلسی 1"><figcaption class="tag">مجلسی</figcaption></figure>
-        <figure class="item" data-cat="party"><img loading="lazy" src="assets/party/2.jpg" alt="میکاپ مجلسی 2"><figcaption class="tag">مجلسی</figcaption></figure>
-        <figure class="item" data-cat="party"><img loading="lazy" src="assets/party/3.jpg" alt="میکاپ مجلسی 3"><figcaption class="tag">مجلسی</figcaption></figure>
-        <!-- Editorial -->
-        <figure class="item" data-cat="editorial"><img loading="lazy" src="assets/editorial/1.jpg" alt="میکاپ فشن 1"><figcaption class="tag">فشن</figcaption></figure>
-        <figure class="item" data-cat="editorial"><img loading="lazy" src="assets/editorial/2.jpg" alt="میکاپ فشن 2"><figcaption class="tag">فشن</figcaption></figure>
-        <figure class="item" data-cat="editorial"><img loading="lazy" src="assets/editorial/3.jpg" alt="میکاپ فشن 3"><figcaption class="tag">فشن</figcaption></figure>
-      </div>
-    </section>
+                    // مخفی‌سازی پوشه‌ها
+                    foldersContainer.style.opacity = "0";
+                    setTimeout(() => {
+                        foldersContainer.style.display = "none";
+                        galleryContainer.style.display = "block";
+                        requestAnimationFrame(() => {
+                            galleryContainer.style.opacity = "1";
+                        });
+                    }, 200);
+                });
+            });
 
-    <footer>© Timah Makeup — تمامی حقوق محفوظ است.</footer>
-  </div>
+            // دکمه بازگشت
+            backBtn.addEventListener("click", e => {
+                e.preventDefault();
+                galleryContainer.style.opacity = "0";
+                setTimeout(() => {
+                    galleryContainer.style.display = "none";
+                    foldersContainer.style.display = "flex";
+                    requestAnimationFrame(() => {
+                        foldersContainer.style.opacity = "1";
+                        window.scrollTo({ top: scrollY.value, behavior: "instant" });
+                    });
+                }, 200);
+            });
 
-  <!-- ======= Lightbox ======= -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="نمایش عکس">
-    <button class="close" id="closeLb">بستن</button>
-    <img id="lbImg" alt="">
-  </div>
+            // نمایش تمام‌صفحه
+            gallery.addEventListener("click", e => {
+                if (e.target.tagName === "IMG") {
+                    lightboxImg.src = e.target.src;
+                    lightbox.style.display = "flex";
+                    document.body.style.overflow = "hidden";
+                }
+            });
 
-  <script>
-    /* --- Filter buttons logic --- */
-    const filters = document.querySelectorAll('.filter');
-    const items = document.querySelectorAll('.item');
-    filters.forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        filters.forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        items.forEach(it=>{
-          // show/hide by category
-          it.style.display = (f==='all' || it.dataset.cat===f) ? '' : 'none';
+            // بستن حالت تمام‌صفحه
+            lightbox.addEventListener("click", () => {
+                lightbox.style.display = "none";
+                document.body.style.overflow = "auto";
+            });
         });
-      });
-    });
+    </script>
 
-    /* --- Simple lightbox --- */
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    const closeLb = document.getElementById('closeLb');
-    document.getElementById('grid').addEventListener('click',(e)=>{
-      const img = e.target.closest('img');
-      if(!img) return;
-      lbImg.src = img.src; // use same src; could swap to high-res if available
-      lb.classList.add('open');
-    });
-    closeLb.addEventListener('click',()=>lb.classList.remove('open'));
-    lb.addEventListener('click',(e)=>{ if(e.target===lb) lb.classList.remove('open'); });
-    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') lb.classList.remove('open'); });
-  </script>
+
+
+
+    <!-- صفحه اول -->
+    <section class="hero" id="home">
+
+        <div class="glass-triangle"></div>
+
+        <svg class="triangle-shape" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#466ab7; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#6288cf; stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <!--   <polygon points="100,0 100,96 15,50" fill="url(#grad)" stroke="rgba(0,0,0,0.45)" stroke-width="0.8" vector-effect="non-scaling-stroke"/> -->
+            <line x1="100" y1="96" x2="0" y2="42" stroke="rgba(0,0,0,0.55)" stroke-width="3"
+                vector-effect="non-scaling-stroke"></line>
+            <line x1="100" y1="0" x2="15" y2="50" stroke="rgba(0,0,0,0.55)" stroke-width="3"
+                vector-effect="non-scaling-stroke"></line>
+        </svg>
+
+
+        <div class="intro">
+            <h1>Title Test</h1>
+            <p>Fname Alastname<br />MMMM Artist<br />Tehran</p>
+        </div>
+
+        <div class="menu">
+            <a href="#services">خدمات</a>
+            <a href="#about">معرفی</a>
+            <a href="#portfolio">نمونه‌کارها</a>
+            <a href="#contact">راه‌های ارتباط</a>
+            <!-- <a href="#booking">رزرو نوبت</a> -->
+        </div>
+
+        <div class="footer">
+  <a data-social="instagram"
+     href="https://instagram.com/Timah.makeup"
+     target="_blank" rel="noopener">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+                اینستاگرام
+            </a>
+
+<!--             
+  <a data-social="whatsapp"
+     href="https://wa.me/989121234567"
+     target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 308 308" width="22" height="22"
+                    fill="currentColor">
+                    <g id="XMLID_468_">
+                        <path id="XMLID_469_" d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156
+          c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687
+          c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887
+          c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153
+          c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348
+          c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802
+          c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922
+          c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0
+          c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458
+          C233.168,179.508,230.845,178.393,227.904,176.981z" />
+                        <path id="XMLID_470_" d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716
+          c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396
+          c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z
+           M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188
+          l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677
+          c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867
+          C276.546,215.678,222.799,268.994,156.734,268.994z" />
+                    </g>
+                </svg>
+                واتسپ
+            </a> 
+        -->
+
+
+ <a data-social="telegram"
+     href="https://t.me/Timahmakeup"
+     target="_blank" rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 2L11 13"></path>
+      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+    </svg>
+                تلگرام
+            </a>
+        </div>
+
+
+    </section>
+
+    <!-- صفحه دوم معرفی -->
+    <section class="about" id="about">
+        <!-- <h2>Intro</h2> -->
+        <br>
+        <h2 class="about-title">معرفی</h2>
+
+        <div class="circle-big">
+            <p>tt tt tt tt<br>gg ggg gg<br>ggg gg در gg gg و gg</p>
+        </div>
+        <div class="circle-small"></div>
+    </section>
+
+
+    <section class="services" id="services">
+        <div class="services-content">
+            <!-- <h2>Services</h2> -->
+            <h2 class="about-title">خدمات</h2>
+
+            <ul>
+                <li>ف فففف</li>
+                <li>لل لللل</li>
+                <li>ااااا ااا</li>
+                <li>غغغغ غغغ و غغغ</li>
+                <li>ظظظظظ ظظظ ظظظ</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="portfolio" id="portfolio" style="height: 100%;">
+        <h2 class="portfolio-title">نمونه‌کارها</h2>
+
+        <div class="folders"></div>
+
+        <div class="gallery-container" id="gallery">
+            <button class="back-btn">بازگشت</button>
+            <div class="gallery"></div>
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <img src="" alt="">
+        </div>
+    </section>
+
+    <script src="gallery.js"></script>
+
+    <script src="social.js"></script>
+
+
 </body>
+
 </html>
