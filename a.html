@@ -22,6 +22,14 @@
             scroll-snap-type: y mandatory;
         }
 
+        .bg-fixed {
+  position: fixed;
+  inset: 0;
+  background: url("02.jpg") center/cover no-repeat;
+  z-index: -1;
+  transform: translateZ(0); /* جلوگیری از لرزش در موبایل */
+}
+
         section {
             height: 100vh;
             width: 100%;
@@ -649,6 +657,7 @@
     </script>
 
 
+  <div class="bg-fixed"></div>
 
 
     <!-- صفحه اول -->
@@ -791,5 +800,6 @@
 
 
 </body>
+
 
 </html>
