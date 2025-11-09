@@ -22,6 +22,16 @@
             scroll-snap-type: y mandatory;
         }
 
+        /* بکگراند ثابت واقعی */
+        .bg-fixed {
+            position: fixed;
+            inset: 0;
+            background: url("02.jpg") center/cover no-repeat;
+            z-index: -1;
+            transform: translateZ(0);
+            /* جلوگیری از لرزش در موبایل */
+        }
+
         section {
             height: 100vh;
             width: 100%;
@@ -70,8 +80,8 @@
 
         .menu {
             position: absolute;
-            top: 45%;
-            right: 5%;
+            top: 51%;
+            right: 7%;
             z-index: 3;
         }
 
@@ -97,7 +107,7 @@
         }
 
         .menu a:nth-child(1) {
-            top: -105px;
+            top: -120px;
             right: -15px;
         }
 
@@ -107,7 +117,7 @@
         }
 
         .menu a:nth-child(3) {
-            top: 35px;
+            top: 50px;
             right: -15px;
         }
 
@@ -170,7 +180,7 @@
        صفحه دوم: معرفی
     -------------------------- */
         .about {
-            margin-top: -290px;
+            margin-top: -170px;
 
             /* background: url("02.jpg") center/cover fixed no-repeat; */
             /* هماهنگ با صفحه اول */
@@ -232,7 +242,7 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: url("01.jpg") center/cover no-repeat;
+            background: url("03.jpg") center/cover no-repeat;
             border: 3px solid rgba(255, 255, 255, 0.9);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
             z-index: 3;
@@ -325,7 +335,7 @@
             /* padding-top: 90px; */
             color: #fff;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-            margin-top: -100px;
+            margin-top: -50px;
         }
 
         .services::before {
@@ -349,11 +359,11 @@
                     rgba(0, 0, 0, 1) 14%,
                     rgba(0, 0, 0, 1) 80%,
                     rgba(0, 0, 0, 0) 100%);
-            -webkit-mask-image: linear-gradient(to bottom,
+            /* -webkit-mask-image: linear-gradient(to bottom,
                     rgba(0, 0, 0, 0) 0%,
                     rgba(0, 0, 0, 1) 14%,
                     rgba(0, 0, 0, 1) 47%,
-                    rgba(0, 0, 0, 0) 56%);
+                    rgba(0, 0, 0, 0) 56%); */
         }
 
 
@@ -436,14 +446,14 @@
             color: #fff;
             padding-top: 60px;
             padding-bottom: 60px;
-            top: -200px;
+            top: -40px;
             /* min-height: 100vh; */
             overflow: visible;
         }
 
 
         .portfolio::before {
-                        min-height: 100vh;
+            min-height: 100vh;
 
             content: "";
             position: absolute;
@@ -649,6 +659,7 @@
     </script>
 
 
+    <div class="bg-fixed"></div>
 
 
     <!-- صفحه اول -->
@@ -672,31 +683,30 @@
 
 
         <div class="intro">
-            <h1>Title Test11</h1>
+            <h1>Title Test</h1>
             <p>Fname Alastname<br />MMMM Artist<br />Tehran</p>
         </div>
 
         <div class="menu">
-            <a href="#services">خدمات</a>
             <a href="#about">معرفی</a>
+            <a href="#services">خدمات</a>
             <a href="#portfolio">نمونه‌کارها</a>
-            <a href="#contact">راه‌های ارتباط</a>
+            <!-- <a href="#contact">راه‌های ارتباط</a> -->
             <!-- <a href="#booking">رزرو نوبت</a> -->
         </div>
 
         <div class="footer">
-  <a data-social="instagram"
-     href="https://instagram.com/Timah.makeup"
-     target="_blank" rel="noopener">
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-    </svg>
+            <a data-social="instagram" href="https://instagram.com/Timah.makeup" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
                 اینستاگرام
             </a>
 
-<!--             
+            <!--             
   <a data-social="whatsapp"
      href="https://wa.me/989121234567"
      target="_blank" rel="noopener">
@@ -727,13 +737,12 @@
         -->
 
 
- <a data-social="telegram"
-     href="https://t.me/Timahmakeup"
-     target="_blank" rel="noopener">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 2L11 13"></path>
-      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-    </svg>
+            <a data-social="telegram" href="https://t.me/Timahmakeup" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2L11 13"></path>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
                 تلگرام
             </a>
         </div>
@@ -765,6 +774,11 @@
                 <li>ااااا ااا</li>
                 <li>غغغغ غغغ و غغغ</li>
                 <li>ظظظظظ ظظظ ظظظ</li>
+                <li>ظظظظظ ظظظ ظظظ</li>
+                <li>ظظظظظ ظظظ ظظظ</li>
+                <li>ظظظظظ ظظظ ظظظ</li>
+                <li>ظظظظظ ظظظ ظظظ</li>
+
             </ul>
         </div>
     </section>
