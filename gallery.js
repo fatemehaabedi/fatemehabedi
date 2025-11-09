@@ -9,21 +9,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ✳️ اینجا فقط گالری‌ها رو تعریف کن:
   const GALLERIES = [
+    // {
+    //   title: "میکاپ عروسی",
+    //   cover: "01.jpg",
+    //   images: ["01.jpg", "02.jpg", "03.jpg"]
+    // },
+    // {
+    //   title: "میکاپ مهمانی",
+    //   cover: "04.jpg",
+    //   images: ["04.jpg", "05.jpg", "06.jpg"]
+    // },
+    // {
+    //   title: "سبک کلاسیک",
+    //   cover: "07.jpg",
+    //   images: ["07.jpg", "08.jpg", "09.jpg" , "10.jpg" , "11.jpg" , "12.jpg"  ]
+    // }
+
     {
-      title: "میکاپ عروسی",
-      cover: "01.jpg",
-      images: ["01.jpg", "02.jpg", "03.jpg"]
+      title: "مدل 01",
+      cover: "MEITU_20251106_140033581.jpg",
+      images: ["MEITU_20251106_131638231.jpg","MEITU_20251106_131705690.jpg", "MEITU_20251106_131752939.jpg", "MEITU_20251106_140033581.jpg"]
     },
-    {
-      title: "میکاپ مهمانی",
-      cover: "04.jpg",
-      images: ["04.jpg", "05.jpg", "06.jpg"]
-    },
-    {
-      title: "سبک کلاسیک",
-      cover: "07.jpg",
-      images: ["07.jpg", "08.jpg", "09.jpg" , "10.jpg" , "11.jpg" , "12.jpg"  ]
+
+        {
+      title: "مدل 02",
+      cover: "MEITU_20251106_131537012.jpg",
+      images: ["MEITU_20251106_131537012.jpg","MEITU_20251106_131238369.jpg", "MEITU_20251106_131155821.jpg", "MEITU_20251106_131048047.jpg"]
     }
+    
   ];
 
   // ساخت خودکار پوشه‌ها
@@ -84,3 +97,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "auto";
   });
 });
+
