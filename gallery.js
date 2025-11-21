@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // }
 
 
-{
+    {
       title: "file 1",
       cover: "MEITU_20251106_13705690.jpg",
-      images: ["MEITU_20251106_13705690.jpg","MEITU_20251110_145834855.jpg","MEITU_20251110_145803298.jpg", "MEITU_20251106_131926841.jpg", "MEITU_20251106_131847640.jpg","MEITU_20251106_131705690.jpg","MEITU_20251106_131608710.jpg","MEITU_20251106_140033581.jpg"]
+      images: ["MEITU_20251106_13705690.jpg","MEITU_20251110_145834855.jpg","MEITU_20251110_145803298.jpg", "MEITU_20251106_131926841.jpg", "MEITU_20251106_131847640.jpg","MEITU_20251106_131638231.jpg","MEITU_20251106_131608710.jpg","MEITU_20251106_140033581.jpg"]
          },
 
     {
@@ -135,5 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "auto";
   });
 });
+
 
 
